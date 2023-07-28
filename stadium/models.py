@@ -1,5 +1,13 @@
 from django.db import models
 from datetime import datetime
+from django.contrib.auth.models import AbstractUser
+
+class CustomUser(AbstractUser):
+    ROLE_CHOICES = (
+        ('o','Owner'),
+        ('u','User'),
+    )
+    roles =     models.CharField(max_length=1,choices=ROLE_CHOICES)
 
 class OwnerModel(models.Model):
     name = models.CharField(max_length=100, default='')

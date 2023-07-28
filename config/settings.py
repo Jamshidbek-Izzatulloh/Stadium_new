@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
 ]
+AUTH_USER_MODEL = 'stadium.CustomUser'
 
 REST_FRAMEWORK = {
     
