@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import UserModel, BronStadiumModel
+from .models import UserModel
 
 admin.site.register(UserModel)
-admin.site.register(BronStadiumModel)
 # Register your models here.

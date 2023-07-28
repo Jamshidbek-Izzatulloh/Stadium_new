@@ -1,8 +1,5 @@
 from rest_framework import serializers
-from .models import (UserModel,BronStadiumModel)
-
-from django.shortcuts import get_object_or_404
-
+from .models import UserModel
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -10,9 +7,5 @@ class UserSerializer(serializers.ModelSerializer):
         model = UserModel
         fields = '__all__'
 
-class BronStadiumSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = BronStadiumModel
-        fields = '__all__'
 
 

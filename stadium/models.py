@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import AbstractUser
+from datetime import datetime
 
 class CustomUser(AbstractUser):
     ROLE_CHOICES = (
@@ -28,7 +29,7 @@ class StadiumModel(models.Model):
     name = models.CharField(max_length=100, default='')
     address = models.CharField(max_length=500, default='')
     contact = models.CharField(max_length=30, default='')
-    # photo = models.ImageField(upload_to="stadium_photo/%Y/%m/%d", blank=True)
+    photo = models.ImageField(upload_to="stadium_photo/%Y/%m/%d", blank=True)
     price1hour = models.IntegerField(default=0)
     owner = models.ForeignKey(OwnerModel, on_delete=models.SET_NULL, null=True)
 
@@ -39,15 +40,17 @@ class StadiumModel(models.Model):
         db_table = 'stadium_model'
 
 
-class BronedStadiumModel(models.Model):
-    from users.models import BronStadiumModel
-    name = models.ForeignKey(BronStadiumModel, on_delete=models.SET_NULL, null=True)
+class BookingModel(models.Model):
+    from users.models import UserModel
+    user = models.ForeignKey(UserModel, on_delete=models.SET_NULL, null=True)
+    date = models.DateTimeField(default=datetime.now())
+    time_slot = models.TimeField()
 
     def __str__(self) -> str:
         return self.name
     
     class Meta:
-        db_table = 'broned_stadium_model'
+        db_table = 'booking_model'
 
 
 

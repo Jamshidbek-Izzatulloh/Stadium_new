@@ -16,14 +16,14 @@ class UserModel(models.Model):
     class Meta:
         db_table = 'user_model'
 
-class BronStadiumModel(models.Model):
-    from stadium.models import StadiumModel
-    name = models.ForeignKey(StadiumModel, on_delete=models.SET_NULL, null=True)
-    start_date = models.DateField(default=datetime.now)
-    end_date = models.DateField(default=datetime.now)
+# class BronStadiumModel(models.Model):
+#     from stadium.models import StadiumModel
+#     name = models.ForeignKey(StadiumModel, on_delete=models.SET_NULL, null=True)
+#     start_date = models.DateField(default=datetime.now)
+#     end_date = models.DateField(default=datetime.now)
 
-    def __str__(self) -> str:
-        return self.name
+#     def __str__(self) -> str:
+#         return self.name
     
-    class Meta:
-        db_table = 'bron_stadium_model'
+#     class Meta:
+#         db_table = 'bron_stadium_model'

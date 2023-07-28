@@ -1,5 +1,5 @@
 from rest_framework import serializers 
-from .models import (OwnerModel, StadiumModel, BronedStadiumModel)
+from .models import (OwnerModel, StadiumModel, BookingModel)
 
 class OwnerModelSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,8 +11,8 @@ class StadiumModelSerializer(serializers.ModelSerializer):
         model = StadiumModel
         fields = '__all__'
 
-class BronedStadiumModelSerializer(serializers.ModelSerializer):
+class BookingModelSerializer(serializers.ModelSerializer):
     class Meta:
-        model = BronedStadiumModel
+        model = BookingModel
         fields = '__all__'
 
