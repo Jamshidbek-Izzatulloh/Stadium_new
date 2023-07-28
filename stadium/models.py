@@ -7,7 +7,7 @@ class OwnerModel(models.Model):
     date_of_birth = models.DateField(default=datetime.now)
     address = models.CharField(max_length=150)
     email = models.CharField(max_length=100)
-    photo = models.ImageField(upload_to="Owner_photo/%Y/%m/%d", blank=True)
+    # photo = models.ImageField(upload_to="Owner_photo/%Y/%m/%d", blank=True)
 
     def __str__(self) -> str:
         return self.name
@@ -20,7 +20,7 @@ class StadiumModel(models.Model):
     name = models.CharField(max_length=100, default='')
     address = models.CharField(max_length=500, default='')
     contact = models.CharField(max_length=30, default='')
-    photo = models.ImageField(upload_to="stadium_photo/%Y/%m/%d", blank=True)
+    # photo = models.ImageField(upload_to="stadium_photo/%Y/%m/%d", blank=True)
     price1hour = models.IntegerField(default=0)
     owner = models.ForeignKey(OwnerModel, on_delete=models.SET_NULL, null=True)
 

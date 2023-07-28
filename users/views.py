@@ -5,11 +5,19 @@ from .serializer import UserSerializer,BronStadiumSerializer
 from rest_framework import generics
 
 
-class ListCreatUserView(generics.ListCreateAPIView):
+class LCUserView(generics.ListCreateAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserSerializer
 
+class RUDUserView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = UserModel.objects.all()
+    serializer_class = UserSerializer
 
-class ListCreatBronStadiumView(generics.ListCreateAPIView):
+class LCBronStadiumView(generics.ListCreateAPIView):
     queryset = BronStadiumModel
     serializer_class = BronStadiumSerializer
+
+class RUDBronStadiumView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = BronStadiumModel
+    serializer_class = BronStadiumSerializer
+    
