@@ -55,10 +55,3 @@ class BookingModel(models.Model):
 
 
 
-
-
-
-
-
-
-
