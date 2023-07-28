@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import(ListCreatUserView,ListCreatBronStadiumView)
+from .views import(LCUserView,LCBronStadiumView)
 
 
 
 
 urlpatterns= [
-    path('user/',ListCreatUserView.as_view()),
-    path('user/<pk>/',ListCreatBronStadiumView.as_view)
+    path('user/',LCUserView.as_view()),
+    path('user/<pk>/',LCBronStadiumView.as_view)
 ]
